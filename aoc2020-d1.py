@@ -21,7 +21,6 @@ def find_two_values_that_sum(lines, sum=2020):
 
 
 def main():
-    # Use a breakpoint in the code line below to debug your script.
     filename = 'input-p1.txt'
     with open(filename, 'r') as f:
         lines = f.readlines()
