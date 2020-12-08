@@ -18,6 +18,7 @@ def find_missing_sequential_seat(seat_id_list):
             print(f'Found missing seat ID: {idx}')
             return seat_id
 
+
 def run_case(filename):
     with open(filename, 'r') as f:
         lines = f.read().splitlines()
@@ -26,8 +27,6 @@ def run_case(filename):
     print(f'Found max seat ID: {max(seat_id_list)} in seat_id_list: {seat_id_list}')
 
     my_seat_id = find_missing_sequential_seat(seat_id_list)
-
-
 
 
 if __name__ == '__main__':
