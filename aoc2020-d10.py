@@ -1,5 +1,31 @@
-ones_map = {}
+'''
+Gaps of 3 break up the different combinations of adapters.
+Find the number of paths within each sequence of gaps of one,
+then multiply all together to find total number of paths.
 
+Create crude lookup table using observations below. "in a row"
+here is counting consecutive ones minus the first of the sequence.
+1 in a row: 1 path
+(0), 1, (4)
+2 in a row: 2 paths
+(0), 1, 2, (5)
+(0), 2, (5)
+3 in a row: 4 paths
+(0), 1, 2, 3, (6)
+(0), 1, 3, (6)
+(0), 2, 3, (6)
+(0), 3, (6)
+4 in a row: 7 paths
+(0), 1, 2, 3, 4, (7)
+(0), 1, 2, 4, (7)
+(0), 1, 3, 4, (7)
+(0), 1, 4, (7)
+(0), 2, 3, 4, (7)
+(0), 2, 4, (7)
+(0), 3, 4, (7)
+'''
+
+ones_map = {}
 def create_consecutive_ones_map():
     ones_map[1] = 1
     ones_map[2] = 2
@@ -76,8 +102,6 @@ def do_p1(values):
     print(f'Found diff_of_one: {diff_of_one} and diff_of_three: {diff_of_three}. Product: {diff_of_one * diff_of_three}')
 
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     filenames = ['input-sample.txt', 'input-test1.txt', 'input-sample2.txt', 'input-d10.txt']
     for filename in filenames:
